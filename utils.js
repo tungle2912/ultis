@@ -195,7 +195,7 @@ export async function checkProxiesInPortRange() {
     await Promise.all(allPromises);
 
     // Ghi các proxy hoạt động vào file 'checked_proxies.txt'
-    await fs.promises.writeFile("checked_proxies.txt", validProxies.join("\n"));
+    await fs.promises.appendFile("checked_proxies.txt", validProxies.join("\n"));
     console.log("Checked proxies have been saved to checked_proxies.txt.");
   } catch (error) {
     console.error("Error reading file or checking proxies:", error);

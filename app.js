@@ -10,6 +10,7 @@ async function executeTasks() {
   try {
     await removeDuplicateProxies(); // Loại bỏ proxy trùng lặp
     await checkAllProxies(); // Kiểm tra tất cả proxy
+    await checkProxiesInPortRange()
   } catch (error) {
     console.error("Error during execution:", error);
   }
